@@ -24,6 +24,7 @@ public class CreateInsertFile {
      */
     private static final String inFilePath = "E:/资料/工作/卡司收单财务自动化/生产/log/20190917/";
 
+
     private static final List<String> fileList = Arrays.asList("bt_bmp_inf.TXT", "bt_buf_chg.TXT", "bt_buf_dsp.TXT", "bt_con_inf.TXT", "bt_msg_inf.TXT");
 
     public static void main(String[] args) {
