@@ -44,6 +44,7 @@ public class CreateInsertFile {
                 List<String> result = new ArrayList<>();
                 while ((lineMsg = br.readLine()) != null) {
                     lineNum++;
+                    
                     if (lineNum == 1) {
                         tital = lineMsg;
                     } else {
@@ -67,6 +68,7 @@ public class CreateInsertFile {
                 }
 
                 writFile(inFilePath + "insert_" + file, result);
+                System.out.println("insert_" + file+" 生成完毕！");
             } catch (Exception e) {
                 System.out.println("--------------------file值=" + file + "," + "当前类=CreateInsertFile.main()");
                 System.out.println("--------------------lineNum值=" + lineNum + "," + "当前类=CreateInsertFile.main()");

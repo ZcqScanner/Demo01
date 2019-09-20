@@ -48,7 +48,6 @@ public class ParseSelectLog {
             int index;
             while ((lineMsg = br.readLine()) != null) {
                 lineNum++;
-                System.out.println("--------------------lineNum值=" + lineNum + "," + "当前类=Main.main()");
 
                 String tempMsg = lineMsg.replace(" ", "");
                 if (StringUtil.isNotEmpty(tempMsg) && tempMsg.length() > 10) {
@@ -69,7 +68,7 @@ public class ParseSelectLog {
                         }
 
                         result.add( sb.append(CHANGE_LINE).toString());
-
+                     
                     } else if ((index = ParseUtils.indexOf(lineMsg, "select&*&from", 0)) != -1) {
                         changTitle = true;
                         tableName = lineMsg.substring(index).replaceAll("[ ;]", "");
@@ -112,6 +111,8 @@ public class ParseSelectLog {
                     beferLineMsg = lineMsg;
                 }
             }
+            System.out.println("inFile="+inFile+" 共解析【"+lineNum+"】行！");
+            System.out.println("inFile="+inFile+" 解析完毕！");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
